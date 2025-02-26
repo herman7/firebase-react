@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { BrowserRouter, useLocation } from "react-router-dom";
+import AuthProvider from "./store/AuthContext";
+import routes from './routes'
+import { ToastContainer } from "react-toastify";
+import CustomRouter from '@/components/CustomRouter'
+import Navbar from '@/components/navbar/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const location = useLocation();
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="bg-lightgray dark:bg-darkgray text-dark dark:text-light">
+      {}
+      {location.pathname !== '/signin' &&
+        location.pathname !== '/signup' &&
+        routes.find(route => route.path === location.pathname) !==
+          undefined && <Navbar />}
+      <CustomRouter />
+    </div>
+  );
 }
 
-export default App
+const WrappedApp = () => {
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <App />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          rtl={false}
+          pauseOnHover
+          theme="light"
+        />
+      </AuthProvider>
+    </BrowserRouter>
+  );
+};
+
+export default WrappedApp;
