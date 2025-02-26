@@ -1,7 +1,7 @@
 // system imports
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { MdEmail, MdPassword } from 'react-icons/md';
-import { ImFacebook, ImTwitter, ImGoogle } from 'react-icons/im';
+import { ImFacebook, ImTwitter } from 'react-icons/im';
 import { FaUserCircle } from 'react-icons/fa';
 import { RiLoginCircleFill } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';

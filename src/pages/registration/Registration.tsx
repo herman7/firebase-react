@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { MdEmail, MdPassword } from 'react-icons/md';
 import { FaUserCircle, FaUser } from 'react-icons/fa';
 import { RiLoginCircleFill } from 'react-icons/ri';
-import { ImFacebook, ImTwitter, ImGoogle } from 'react-icons/im';
+import { ImFacebook, ImTwitter } from 'react-icons/im';
 import { Link, useNavigate } from 'react-router-dom';
 
 // custom imports
@@ -102,7 +102,7 @@ const Registration = () => {
                 </span>
               </p>
               <div className="flex justify-center mt-7">
-                <div className="login-button">
+                {/* <div className="login-button">
                   <button
                     className="login-provider-button text-primary transition-all shadow-sm shadow-light dark:shadow-dark duration-150 hover:bg-primary hover:text-lightgray text-2xl flex border-primary hover:border-2 hover:border-lightgray border-2 p-2 rounded-full"
                     // onClick={signInWithGoogle}
@@ -111,7 +111,7 @@ const Registration = () => {
                       <ImGoogle />
                     </span>
                   </button>
-                </div>
+                </div> */}
                 <div className="login-button mx-4">
                   <button
                     className="login-provider-button text-primary transition-all shadow-sm shadow-light dark:shadow-dark duration-150 hover:bg-primary hover:text-lightgray text-2xl flex border-primary hover:border-2 hover:border-lightgray border-2 p-2 rounded-full"
